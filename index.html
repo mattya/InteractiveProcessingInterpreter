@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>interpreter9 : Built with Processing and Processing.js</title>
+		<link rel="icon"  type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAQAAVzABAEAjBQAaDwYAWjUGAGE6CQBrQQ0ATS8PAFhAJwBUQC8AbFI6AHVXPACBZk4A4NrWAPb19QAAAAAAAMmZmZmZmgAJIwAAAAAAcMIjPjA+PjAKpxIuMDMzMAm0Ii4zMzMACaIiLt3dMAAJtyIuIzPQAAm0Un5yM+IzKLRkfncy4iIotRF+dyLkIiq0QX53F+EiGrQUTkd34iIatEVu7u5iIVrBVVRBRFRVbAtGZGZla2uwAMu7u7u8vADAAwAAgAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIABAADAAwAA" />
+		<meta name="Generator" content="Processing" />
+		<!-- - - - - - - - - - - - - - - - - - - - -
+		+
+		+    Wondering how this works?
+		+
+		+    Go to: http://processing.org/
+		+    and: http://processingjs.org/
+		+
+		+ - - - - - - - - - - - - - - - - - - - - -->
+
+		<!--[if lt IE 9]>
+			<script type="text/javascript">alert("Your browser does not support the canvas tag.");</script>
+		<![endif]-->
+		<style>
+			#left {
+				width: 250px;
+				height: 500px;
+				border: solid 1px black;
+				background-color: #FFEEEE;
+				float: left;
+			}
+			#right {
+				width: 250px;
+				height: 250px;
+				border: solid 1px black;
+				background-color: #EEFFEE;
+				float: left;
+			}
+			#env {
+				width: 250px;
+				height: 250px;
+				border: solid 1px black;
+				background-color: #EEEEFF;
+				float: left;
+			}
+		</style>
+		<script src="processing.js" type="text/javascript"></script>
+		<script type="text/javascript">
+		function init(){
+document.getElementById("program").value="x=100;y=100;vx=1;vy=2;\n\
+def f(){\n\
+  fill(255, 255, 255);\n\
+  rect(0, 0, 499, 499);\n\
+  fill(0, 0, 0);\n\
+  ellipse(x, y, 100, 100);\n\
+  x=x+vx;\n\
+  y=y+vy;\n\
+  if x>450 && vx>0 { vx = 0-vx; };\n\
+  if x < 50 && vx<0 { vx = 0-vx; };\n\
+  if y>450 && vy>0 { vy = 0-vy; };\n\
+  if y<50 && vy<0 { vy = 0-vy; };\n\
+  print x, y;\n\
+};\n\
+add f";
+		}
+// convenience function to get the id attribute of generated sketch html element
+function getProcessingSketchId () { return 'interpreter9'; }
+</script>
+
+	</head>
+	<body onload="init()">
+		<textarea id="program" rows="10" cols="80" warp="soft"></textarea>
+		<button onclick="Processing.getInstanceById('interpreter9').get_string();" style="position:relative; top:0px; left:0px;">詠唱</button>
+		<div>
+			<div id="left">
+
+			</div>
+
+			<div id="content" style="float:left">
+				<div>
+					<canvas id="interpreter9" data-processing-sources="interpreter9.pde"
+							width="500" height="500">
+						<p>Your browser does not support the canvas tag.</p>
+						<!-- Note: you can put any alternative content here. -->
+					</canvas>
+					<noscript>
+						<p>JavaScript is required to view the contents of this page.</p>
+					</noscript>
+		    	</div>
+				<h1>interpreter9</h1>
+	    		<p id="description"></p>
+				<p id="sources">Source code: <a href="interpreter9.pde">interpreter9</a> </p>
+				<p>
+				Built with <a href="http://processing.org" title="Processing">Processing</a>
+				and <a href="http://processingjs.org" title="Processing.js">Processing.js</a>
+				</p>
+			</div>
+
+			<div id="right">
+
+			</div>
+			<div id="env">
+
+			</div>
+		</div>
+	</body>
+</html>
